@@ -26,4 +26,11 @@
     <ProjectReference Include="..\TF.Models\TF.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="AutoFixture" />
+    <Using Include="FluentAssertions" />
+    <Using Include="NSubstitute" />
+    <Using Include="Xunit" />
+  </ItemGroup>  
+
 </Project>
