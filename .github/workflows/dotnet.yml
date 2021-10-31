@@ -24,7 +24,7 @@ jobs:
     - name: Change directory
       run: |
         ls -s
-        cs src
+        cd src
       shell: bash
     - name: Restore dependencies
       run: dotnet restore FT.sln
