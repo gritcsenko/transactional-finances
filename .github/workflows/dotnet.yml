@@ -22,9 +22,9 @@ jobs:
         dotnet-version: ${{ matrix.dotnet-version }}
         include-prerelease: true
     - name: Restore dependencies
-      run: dotnet restore src
+      run: dotnet restore src --verbosity normal
     - name: Build
-      run: dotnet build src --no-restore
+      run: dotnet build src --no-restore --verbosity normal      
     - name: Test
       run: dotnet test src --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
     - name: Upload dotnet test results
