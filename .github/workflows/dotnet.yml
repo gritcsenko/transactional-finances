@@ -21,20 +21,12 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
         include-prerelease: true
-    - name: Change directory
-      run: |
-        ls -s
-        cd src
-      shell: bash
     - name: Restore dependencies
-      run: |
-        cd src
-        ls -s
-        dotnet restore ./FT.sln
+      run: dotnet restore src
     - name: Build
-      run: dotnet build ./FT.sln --no-restore
+      run: dotnet build src --no-restore
     - name: Test
-      run: dotnet test ./FT.sln --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+      run: dotnet test src --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v2
       with:
