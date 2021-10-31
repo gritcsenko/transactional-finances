@@ -10,17 +10,30 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '6.0.x' ]
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: ${{ matrix.dotnet-version }}
         include-prerelease: true
     - name: Restore dependencies
-      run: dotnet restore src/FT.sln
+      run: dotnet restore FT.sln
+      working-directory: ./src
     - name: Build
-      run: dotnet build  src/FT.sln --no-restore
+      run: dotnet build FT.sln --no-restore
+      working-directory: ./src
     - name: Test
-      run: dotnet test  src/FT.sln --no-build --verbosity normal
+      run: dotnet test FT.sln --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+      working-directory: ./src
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: dotnet-results-${{ matrix.dotnet-version }}
+        path: TestResults-${{ matrix.dotnet-version }}
+      # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
