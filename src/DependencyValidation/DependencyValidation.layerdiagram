@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="4cba0d34-004b-4240-b333-a0a9bf04e4aa" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="d3feca47-48bb-45c8-bdac-e8b3c90036eb" name="Tests">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="14e0b12c-177c-41f9-ada3-532dbec743db" direction="Forward">
+          <layerMoniker Id="7bc9ff21-4f28-457c-b48c-2fec6ea2f0f2" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="ccd8e596-44b3-4f13-8dc3-b3bac3840ffa" name="TF.Tests">
+          <references>
+            <reference Id="fbc1d8f1-c908-4c9d-90ab-215c2acca224" name="TF.Tests">
+              <ArtifactNode Label="TF.Tests" Category="CodeSchema_Project" Id="(Assembly=../TF.Tests/TF.Tests.csproj)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=TF.Tests)" Label="TF.Tests.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="7bc9ff21-4f28-457c-b48c-2fec6ea2f0f2" name="Root">
+      <childLayers>
+        <layer Id="f7600ec7-878d-470d-aaaf-c0616bb14bdc" name="Models">
+          <childLayers>
+            <layer Id="fc7047b8-c700-40d9-8142-8af2010c12e6" name="TF.Models">
+              <references>
+                <reference Id="49a534a4-41ca-4f80-a1e3-b0361e633297" name="TF.Models">
+                  <ArtifactNode Label="TF.Models" Category="CodeSchema_Project" Id="(Assembly=../TF.Models/TF.Models.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=TF.Models)" Label="TF.Models.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>
