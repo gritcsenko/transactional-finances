@@ -28,6 +28,7 @@ jobs:
       shell: bash
     - name: Restore dependencies
       run: |
+        cd src
         ls -s
         dotnet restore ./FT.sln
     - name: Build
