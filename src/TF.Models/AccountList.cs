@@ -7,7 +7,7 @@ public sealed class AccountList : IReadOnlyCollection<Account>, IEquatable<Accou
     public AccountList(string name) 
         => Name = name;
 
-    public string Name { get; init; }
+    public string Name { get; }
 
     public int Count => _accounts.Count;
 
