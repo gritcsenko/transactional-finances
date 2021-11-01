@@ -18,7 +18,7 @@ public class AccountTests
     {
         var sut = new Account(_name);
 
-        sut.Name.Should().Be(_name);     
+        sut.Name.Should().Be(_name);
     }
 
     [Fact]

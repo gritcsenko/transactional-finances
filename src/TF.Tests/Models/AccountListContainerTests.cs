@@ -9,17 +9,17 @@ public class AccountListContainerTests
     }
 
     [Fact]
-    public void Should_BeEmpty_WhenCreated()
+    public void EmptyContainer_Should_BeEmpty()
     {
-        var sut = new AccountListContainer();
+        var sut = AccountListContainer.Empty;
 
         sut.Should().BeEmpty();
     }
 
     [Fact]
-    public void Should_HaveZeroCount_WhenCreated()
+    public void EmptyContainer_Should_HaveZeroCount()
     {
-        var sut = new AccountListContainer();
+        var sut = AccountListContainer.Empty;
 
         sut.Count.Should().Be(0);
     }
@@ -27,7 +27,7 @@ public class AccountListContainerTests
     [Fact]
     public void ToString_Should_HaveSquareBraces()
     {
-        var sut = new AccountListContainer();
+        var sut = AccountListContainer.Empty;
 
         var actual = sut.ToString();
 

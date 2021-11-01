@@ -2,11 +2,17 @@
 
 public sealed class AccountListContainer : IReadOnlyCollection<AccountList>
 {
-    private readonly ImmutableHashSet<AccountList> _lists = ImmutableHashSet<AccountList>.Empty;
+    private readonly IImmutableSet<AccountList> _lists;
 
-    public AccountListContainer()
+    internal AccountListContainer()
+        : this(ImmutableHashSet<AccountList>.Empty)
     {
     }
+
+    internal AccountListContainer(IImmutableSet<AccountList> lists)
+        => _lists = lists;
+
+    public static AccountListContainer Empty { get; } = new();
 
     public int Count => _lists.Count;
 
